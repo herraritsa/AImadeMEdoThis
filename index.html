@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="width=device-width", charset="UTF-8">
+    <title>Mediahelvetti</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Terminus&display=swap');
+        h1  {
+        	 font-size: 23px;
+        	 position:relative; left:15px;
+        	 color: #65979f;
+        	 }
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Terminus', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;           
+        }
+        #google {
+            color: white;
+            position:relative; left:-500px; top:-550px; width:auto; height:auto;
+        	font-size: 20px;
+            background-color: black;
+            border: none;
+            border-bottom: dashed;
+            border-width: 2px;
+            border-color: #65979f;
+            }
+        input[type="text"]:focus {
+            outline: none;
+        }
+        img {
+            width: 550px;
+        }
+        p {
+            color: #65979f;
+            text-decoration: none;
+            position:relative; left:-500px; top:210px; width:auto; height:auto;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            margin-top: 10px;
+            position:relative; left:45px;
+        }
+        a:hover {
+            color: pink;
+        }
+        .link-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        e #cursor {
+      		position:relative; left:-130px; top:170px; width:auto; height:auto;
+            animation: blink 2s infinite;
+        }
+
+    @keyframes blink {
+               0% { opacity: 0; }
+               49% { opacity: 0; }
+               50% { opacity: 1; }
+    }
+    </style>
+    <script>
+        window.onload = function() {
+            var totalImages = 55; // Total number of images in your local directory
+            var randomIndex = Math.floor(Math.random() * totalImages) + 1;
+            var imgPath = 'images/' + randomIndex + '.jpeg'; // Path to your local directory
+            document.getElementById('randomImage').src = imgPath;
+        };
+     // Set the date we're counting down to
+        var countDownDate = new Date("Aug 24, 2051 00:00:00").getTime();
+
+        // Update the count down every 1 second
+        var countdownFunction = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for seconds
+            var seconds = Math.floor(distance / 1000);
+
+            // Display the result in the element with id="countdown"
+            document.getElementById("countdown").innerHTML = "The End is here in " + seconds + " seconds.." ;
+
+            // If the count down is finished, write some text 
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+</head>
+<body>
+    <div class="link-container">
+        <img id="randomImage" alt="Random Image">
+        <div>
+        	<h1>+ Raspberry.</h1>
+            <a href="http://192.168.8.188/#/">CasaOS</a><br>
+            <a href="http://192.168.8.188:5800">Jdownloader</a><br>
+            <a href="http://192.168.8.188:8384">Syncthing</a><br>
+		    <h1>+ Manjaro 666.</h1>
+            <a href="http://127.0.0.1:8384">Syncthing</a><br>
+            <a href="http://192.168.8.1/html/index.html">CPE Pro 3</a><br>
+            <h1>+ Muut linkit.</h1>
+            <a href="https://copilot.microsoft.com/?showconv=1">M$ Copilot</a><br>
+            <a href="https://my.pcloud.com/#page=login">PCloud</a><br>
+            <a href="https://high.fi/">High.fi</a><br>
+            <a href="https://www.op.fi/etusivu/">Osuuspankki</a><br>
+            <a href="https://www.google.com/intl/fi/gmail/about/">Gmail</a><br>
+            <p id="countdown"></p>
+            <e><span id="cursor">:(</span></e>
+            <form action="https://www.google.com/search" method="get">
+        	<input type="text" id="google" name="q" placeholder="Elämän tarkoitus?..">
+    		</form>
+        </div>
+    </div>
+</body>
+</html>
+
+
